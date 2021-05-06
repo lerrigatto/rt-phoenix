@@ -65,3 +65,10 @@ export default socket
 console.log("sending a ping")
 channel.push("ping")
   .receive("ok", (resp) => console.log("received", resp.ping))
+
+let authSocket = new Socket("/auth_socket", {
+  params: { token: window.authToken }
+})
+
+authSocket.onOpen(() => console.log("authSocket connected"))
+authSocket.connect()

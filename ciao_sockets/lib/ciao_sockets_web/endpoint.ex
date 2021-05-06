@@ -13,10 +13,15 @@ defmodule CiaoSocketsWeb.Endpoint do
   socket "/socket", CiaoSocketsWeb.UserSocket,
     websocket: true,
     longpoll: false
+  
+  socket "/auth_socket", CiaoSocketsWeb.AuthSocket,
+    websocket: true,
+    longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
-  # Serve at "/" the static files from "priv/static" directory.
+
+# Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phx.digest
   # when deploying your static files in production.
