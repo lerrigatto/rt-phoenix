@@ -72,3 +72,11 @@ let authSocket = new Socket("/auth_socket", {
 
 authSocket.onOpen(() => console.log("authSocket connected"))
 authSocket.connect()
+
+const recurringChannel = authSocket.channel("recurring")
+
+recurringChannel.on("new_token", (payload) => {
+  console.log("received a new token: ", payload)
+})
+
+recurringChannel.join()
