@@ -7,6 +7,7 @@ defmodule CiaoSocketsWeb.AuthSocket do
   channel "ping", CiaoSocketsWeb.PingChannel
   channel "tracked", CiaoSocketsWeb.TrackedChannel
   channel "user:*", CiaoSocketsWeb.AuthChannel
+  channel "recurring", CiaoSocketsWeb.RecurringChannel
 
   def connect(%{"token" => token}, socket) do
     case verify(socket, token) do
