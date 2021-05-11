@@ -80,3 +80,11 @@ recurringChannel.on("new_token", (payload) => {
 })
 
 recurringChannel.join()
+
+const dupeChannel = socket.channel("dupe")
+
+dupeChannel.on("number", (payload) => {
+  console.log("new number: ", payload)
+})
+
+dupeChannel.join()
