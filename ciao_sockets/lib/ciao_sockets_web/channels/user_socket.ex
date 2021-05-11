@@ -6,7 +6,7 @@ defmodule CiaoSocketsWeb.UserSocket do
   channel "ping", CiaoSocketsWeb.PingChannel
   channel "ping:*", CiaoSocketsWeb.PingChannel
   channel "wild:*", CiaoSocketsWeb.WildChannel
-
+  channel "dupe", CiaoSocketsWeb.DupeChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
