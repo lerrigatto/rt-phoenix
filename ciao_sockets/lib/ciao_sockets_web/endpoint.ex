@@ -17,6 +17,10 @@ defmodule CiaoSocketsWeb.Endpoint do
   socket "/auth_socket", CiaoSocketsWeb.AuthSocket,
     websocket: true,
     longpoll: false
+  
+  socket "/stats_socket", CiaoSocketsWeb.StatsSocket,
+    websocket: true,
+    longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 

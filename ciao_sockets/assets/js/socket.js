@@ -88,3 +88,22 @@ dupeChannel.on("number", (payload) => {
 })
 
 dupeChannel.join()
+
+let statsSocket = new Socket("/stats_socket", {})
+statsSocket.onOpen(() => console.log("statsSocket connected"))
+statsSocket.connect()
+
+const statsChannelInvalid = statsSocket.channel("invalid")
+statsSocketInvalid.join()
+  .receive("error", () => {
+    statsChannelInvalid.leave()
+    console.log("leaving invalid channel")
+  })
+
+const statsChannelValid = statsSocket.channel("valid")
+statsSocketValid.join()
+
+for (let i=0; i < 5; i++) {
+  statsChannelValid.push("ping")
+  console.log("ping sent")
+}
