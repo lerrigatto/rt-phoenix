@@ -2,7 +2,7 @@ defmodule Integration.PipelineTest do
   use CiaoSocketsWeb.ChannelCase, async: false
 
   alias CiaoSocketsWeb.AuthSocket
-  alias CiaoSocketWeb.Pipeline.Producer
+  alias CiaoSockets.Pipeline.Producer
 
   defp connect_auth_socket(user_id) do
     {:ok, _, %Phoenix.Socket{}} = 

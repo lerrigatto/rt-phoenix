@@ -43,7 +43,8 @@ defmodule CiaoSockets.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:statix, "~> 1.4"},
-      {:statsd_logger, "~> 1.1", only: [:dev, :test]}
+      {:statsd_logger, "~> 1.1", only: [:dev, :test]},
+      {:gen_stage, "~>1.1"}
     ]
   end
 
