@@ -6,6 +6,8 @@ defmodule CiaoSockets.Application do
   use Application
 
   def start(_type, _args) do
+    :ok = CiaoSockets.Statix.connect()
+
     children = [
       # Start the Telemetry supervisor
       CiaoSocketsWeb.Telemetry,
